@@ -1,0 +1,23 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "A to do list project",
+  "main": "index.js",
+  "scripts": {
+    "test": "this is a test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boinias/toDoList.git"
+  },
+  "author": "Jack Francis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boinias/toDoList/issues"
+  },
+  "homepage": "https://github.com/Boinias/toDoList#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
