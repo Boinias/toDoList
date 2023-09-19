@@ -1,5 +1,5 @@
 import todoListIcon from './photos/todoListIcon.png';
-let mainDisplay = document.getElementById('mainDisplay');
+let mainDisplay = document.getElementById('mainDisplay')
 
 function placeholderIcon () {
     let placeholderIcon = document.createElement('img');

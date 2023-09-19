@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header">To Do List</div>
     <div id="content">
-        <div id="sidebar"></div>
-            <h1 id="sidebarHeader"></h1>
-            <h3 id="sidebarMyFolders"></h3>
+        <div id="sidebar">
+            <h1 id="sidebarHeader">My Todo List</h1>
+            <h3 id="sidebarMyFolders">My Folders</h3>
             <div id="folderBtns"></div>
-            <form action="">
-                <div id="addFolderForm">
-                    <label for="addFolder">Add Folder</label>
-                    <input type="text" name="addFolder" id="addFolder">
-                </div>
-            </form>
-        <div id="mainDisplay">
+            <div id="sidebarForm">
+                <form action="">
+                    <div id="addFolderForm">
+                        <input type="text" name="addFolder" id="addFolder" placeholder="Add folder">
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="mainDisplay" class="mainDisplayEmpty">
         </div>
     </div>
 </body>
