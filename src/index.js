@@ -1,2 +1,2 @@
-import placeholderIcon from './photos/todoListIcon';
+import placeholderIcon from './placeholderIcon.js';
 placeholderIcon();
