@@ -42,7 +42,7 @@ body {
     background-color: rgb(255, 251, 248);
     min-width: 260px;
     height: 100vh;
-    padding: 10px;
+    padding: 25px;
 }
 
 #sidebarMyFolders {
@@ -53,6 +53,9 @@ body {
     margin-top: 10px;
 }
 
+#addFolder{
+    width: auto;
+}
 
 /* Main Display */
 #mainDisplay {
