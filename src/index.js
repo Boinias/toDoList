@@ -1,1 +1,2 @@
-import todoListIcon.png from ./photos/todoListIcon.png
+import placeholderIcon from './photos/todoListIcon';
+placeholderIcon();
