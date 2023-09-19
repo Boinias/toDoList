@@ -9,9 +9,8 @@ class newFolder {
 
 function createFolderObject () {
     let addFolderInput = document.getElementById("addFolder").value;
-    let newFolder = new newFolder (addFolderInput)
-    folders.push(newFolder)
-
+    let folder = new newFolder (addFolderInput)
+    folders.push(folder)
 }
 
 

@@ -32,4 +32,7 @@ function createFolderBtn () {
     }
 }
 
-export default {createFolderBtn};
+export {
+	createFolderBtn,
+	removeMainDisplayElements
+}

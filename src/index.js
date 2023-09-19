@@ -4,10 +4,11 @@ loadPlaceholderIcon()
 
 // Logic to make new folder upon form submission
 import createFolderObject from './createFolderObject.js';
-import {createFolderBtn} from './createFolderBtn.js';
+import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
 const addFolderForm = document.getElementById("addFolderForm");
 addFolderForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    removeMainDisplayElements();
     createFolderObject();
     createFolderBtn();
   }
