@@ -57,6 +57,14 @@ body {
     width: auto;
 }
 
+.selectedColor {
+    background-color: rgb(86, 176, 255);
+}
+
+.deselectedColor {
+    background-color: (255, 251, 248)
+}
+
 /* Main Display */
 #mainDisplay {
     display: flex;
