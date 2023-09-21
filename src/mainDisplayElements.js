@@ -8,39 +8,53 @@ let correctObj
 
 function linkBtnToObj (e) {
     correctObj = folders.find((element) => element.title === e.target.textContent)
-    correctObj = correctObj.title
+    correctObj = correctObj
 }
 
 function linkFormToObj () {
     correctObj = folders.find((element) => element.title === newFolderSubmission.value)
-    correctObj = correctObj.title
+    correctObj = correctObj
 }
 
 function title () {
     let title = document.createElement('div')
     title.id = 'mainDisplayTitle'
-    title.textContent = correctObj;
+    title.textContent = correctObj.title;
     mainDisplay.appendChild(title)
 }
 
 // Logic for counting incomplete tasks
+let incompleteTaskCounter = ''
+function tasksRemainingLogic () {
 let tasks = correctObj.tasks
-const uncompleteTaskCounter = tasks.reduce(function (acc, currentValue){
+console.log(tasks)
+
+if (tasks.length === 0) {
+    incompleteTaskCounter = 0;
+    console.log('ddaad')
+} else {
+    incompleteTaskCounter = tasks.reduce(function (acc, currentValue){
     if (currentValue.completeStatus === 'incomplete') {
         return acc + 1;
     }
     return acc;
     }, 0);
-    uncompleteTaskCounter = String(uncompleteTaskCounter);
+    incompleteTaskCounter = String(incompleteTaskCounter);
+    return incompleteTaskCounter;
+}
+}
 
 function tasksRemainingText () {
-    let tasksRemaining = document.createElement('div')
-    tasksRemaining.id = 'mainDisplayTasksRemaining'
-    tasksRemaining.textContent = `Tasks Remaining:${uncompleteTaskCounter}`
+    let tasksRemaining = document.createElement('div');
+    tasksRemaining.id = 'mainDisplayTasksRemaining';
+    tasksRemaining.textContent = `Tasks Remaining: ${incompleteTaskCounter}`;
+    mainDisplay.appendChild(tasksRemaining)
 }
 
 function mainDisplayElements() {
     title()
+    tasksRemainingLogic()
+    tasksRemainingText()
 }
 
 
