@@ -3,7 +3,7 @@ import folders from './foldersArray'
 class newFolder {
     constructor (title) {
         this.title = title;
-        this.tasksArray = [];
+        this.tasks = [];
     }
 }
 
