@@ -1,4 +1,4 @@
-import {mainDisplayElements} from './mainDisplayElements.js'
+import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
 
 
 let addFolderInput = document.getElementById("addFolder").value;
@@ -35,7 +35,8 @@ function createFolderBtn (e) {
         allBtnsDeselectedColor();
         btnSelectedColor(e.target);
         removeMainDisplayElements();
-        mainDisplayElements(e)
+        linkBtnToObj (e)
+        mainDisplayElements()
         // function to add new elements based on folder details
     }
     folderBtns.appendChild(button)
