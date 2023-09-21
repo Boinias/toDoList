@@ -10,7 +10,7 @@ addFolderForm.addEventListener("submit", (e) => {
     e.preventDefault();
     removeMainDisplayElements();
     createFolderObject();
-    createFolderBtn();
+    createFolderBtn(e);
   }
 );
 

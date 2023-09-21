@@ -1,3 +1,5 @@
+import folders from "./foldersArray";
+
 let addFolderInput = document.getElementById("addFolder").value;
 let folderBtns = document.getElementById("folderBtns")
 
@@ -21,11 +23,13 @@ function removeMainDisplayElements () {
     }
 };
 
-function createFolderBtn () {
+function createFolderBtn (e) {
     let button = document.createElement('button');
+    let addFolderInput = document.getElementById("addFolder").value;
     button.textContent = addFolderInput;
     button.id = 'folderBtn';
     button.classList.add('selectedColor');
+    allBtnsDeselectedColor();
     button.onclick = function (e) {
         allBtnsDeselectedColor();
         btnSelectedColor(e.target);
