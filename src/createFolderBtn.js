@@ -1,13 +1,12 @@
 // Im about to chaane createFolderBtn so that it gets its textcontent from the most recent object in the array 'folders' rather than the form submission's value
 
+import folders from './foldersArray.js';
 import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
 
 
-let addFolderInput = document.getElementById("addFolder").value;
 let folderBtns = document.getElementById("folderBtns")
 
 function allBtnsDeselectedColor () {
-    let folderBtnsParent = document.getElementById('folderBtns')
     let folderBtns = document.querySelectorAll('#folderBtn')
     folderBtns.forEach(function(folderBtn) {
         folderBtn.classList = [];
@@ -26,9 +25,15 @@ function removeMainDisplayElements () {
     }
 };
 
-function createFolderBtn (e) {
+function createFolderBtn () {
     let button = document.createElement('button');
-    let addFolderInput = document.getElementById("addFolder").value;
+    let addFolderInput = ''
+    if (folders.length === 0) {
+        addFolderInput = folders[0].title;
+    } else {
+        addFolderInput = folders[folders.length - 1].title;
+    }
+    addFolderInput = String(addFolderInput);
     button.textContent = addFolderInput;
     button.id = 'folderBtn';
     button.classList.add('selectedColor');
