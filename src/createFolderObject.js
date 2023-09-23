@@ -11,6 +11,8 @@ function createFolderObject () {
     let addFolderInput = document.getElementById("addFolder").value;
     let folder = new newFolder (addFolderInput)
     folders.push(folder)
+    const serializedFolders = JSON.stringify(folders)
+    localStorage.setItem('folders', serializedFolders)
 }
 
 

@@ -12,36 +12,36 @@ function linkBtnToObj (e) {
 }
 
 function linkFormToObj () {
-    correctObj = folders.find((element) => element.title === newFolderSubmission.value)
-    correctObj = correctObj
+    correctObj = folders.find((element) => element.title === newFolderSubmission.value);
+    correctObj = correctObj;
 }
 
 function title () {
     let title = document.createElement('div')
-    title.id = 'mainDisplayTitle'
+    title.id = 'mainDisplayTitle';
     title.textContent = correctObj.title;
-    mainDisplay.appendChild(title)
+    mainDisplay.appendChild(title);
 }
 
 // Logic for counting incomplete tasks
 let incompleteTaskCounter = ''
-function tasksRemainingLogic () {
-let tasks = correctObj.tasks
-console.log(tasks)
 
-if (tasks.length === 0) {
-    incompleteTaskCounter = 0;
-    console.log('ddaad')
-} else {
-    incompleteTaskCounter = tasks.reduce(function (acc, currentValue){
-    if (currentValue.completeStatus === 'incomplete') {
-        return acc + 1;
+function tasksRemainingLogic () {
+    let tasks = correctObj.tasks;
+    console.log(tasks);
+
+    if (tasks.length === 0) {
+        incompleteTaskCounter = 0;
+    } else {
+        incompleteTaskCounter = tasks.reduce(function (acc, currentValue) {
+        if (currentValue.completeStatus === 'incomplete') {
+            return acc + 1;
+        }
+        return acc;
+        }, 0);
+        incompleteTaskCounter = String(incompleteTaskCounter);
+        return incompleteTaskCounter;
     }
-    return acc;
-    }, 0);
-    incompleteTaskCounter = String(incompleteTaskCounter);
-    return incompleteTaskCounter;
-}
 }
 
 function tasksRemainingText () {
@@ -51,7 +51,7 @@ function tasksRemainingText () {
     mainDisplay.appendChild(tasksRemaining)
 }
 
-function mainDisplayElements() {
+function mainDisplayElements () {
     title()
     tasksRemainingLogic()
     tasksRemainingText()

@@ -1,3 +1,10 @@
+// Logic to load local storage
+import folders from './foldersArray.js';
+const storedFolders = JSON.parse(localStorage.getItem('folders'));
+if (storedFolders) {
+  folders = storedFolders
+}
+
 // Logic to load placeholder icon when the user has no folders
 import loadPlaceholderIcon from './placeholderIcon.js';
 loadPlaceholderIcon()
@@ -15,7 +22,6 @@ addFolderForm.addEventListener("submit", (e) => {
     createFolderBtn(e);
     linkFormToObj();
     mainDisplayElements();
-
   }
 );
 
