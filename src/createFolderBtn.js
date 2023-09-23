@@ -1,3 +1,5 @@
+// Im about to chaane createFolderBtn so that it gets its textcontent from the most recent object in the array 'folders' rather than the form submission's value
+
 import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
 
 
