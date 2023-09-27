@@ -1,4 +1,4 @@
-import folders from './foldersArray'
+import {folders} from './foldersArray'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
