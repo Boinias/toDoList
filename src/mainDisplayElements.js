@@ -1,4 +1,4 @@
-import {folders} from './foldersArray'
+import {folders} from './createFolderObject.js'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
@@ -7,12 +7,17 @@ let mainDisplay = document.getElementById('mainDisplay');
 let correctObj
 
 function linkBtnToObj (e) {
-    correctObj = folders.find((element) => element.title === e.target.textContent)
-    correctObj = correctObj
-}
+    correctObj = folders.find((element) => element.title === e.target.textContent);
+    correctObj = correctObj;
+};
 
 function linkFormToObj () {
     correctObj = folders.find((element) => element.title === newFolderSubmission.value);
+    correctObj = correctObj;
+};
+
+function renderMostRecentFolder () {
+    correctObj = folders[folders.length-1];
     correctObj = correctObj;
 }
 
@@ -21,7 +26,7 @@ function title () {
     title.id = 'mainDisplayTitle';
     title.textContent = correctObj.title;
     mainDisplay.appendChild(title);
-}
+};
 
 // Logic for counting incomplete tasks
 let incompleteTaskCounter = ''
@@ -60,4 +65,4 @@ function mainDisplayElements () {
 
 
 
-export {mainDisplayElements, linkBtnToObj ,linkFormToObj};
+export {mainDisplayElements, linkBtnToObj ,linkFormToObj, renderMostRecentFolder};

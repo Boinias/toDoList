@@ -1,8 +1,5 @@
-// Im about to chaane createFolderBtn so that it gets its textcontent from the most recent object in the array 'folders' rather than the form submission's value
-
-import {folders} from './foldersArray.js';
 import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
-
+import {folders, createFolderObject} from './createFolderObject.js'
 
 let folderBtns = document.getElementById("folderBtns")
 
