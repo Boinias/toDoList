@@ -1,6 +1,6 @@
 // Im about to chaane createFolderBtn so that it gets its textcontent from the most recent object in the array 'folders' rather than the form submission's value
 
-import folders from './foldersArray.js';
+import {folders} from './foldersArray.js';
 import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
 
 
@@ -28,7 +28,7 @@ function removeMainDisplayElements () {
 function createFolderBtn () {
     let button = document.createElement('button');
     let addFolderInput = ''
-    if (folders.length === 0) {
+    if (folders.length == 0) {
         addFolderInput = folders[0].title;
     } else {
         addFolderInput = folders[folders.length - 1].title;
