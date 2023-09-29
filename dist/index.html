@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="taskForm">
+            <form>
+                <div id="name">
+                    <label for="name">Task name</label>
+                    <input type="text" id="name" pattern="^[A-Za-z]" required
+                    placeholder=" ">
+                </div>
+                <div id="dueDate">
+                    <label for="dueDate">Due date</label>
+                    <input type="date" id="dueDate" min=''required>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+
     <div id="header">To Do List</div>
     <div id="content">
         <div id="sidebar">

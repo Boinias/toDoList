@@ -5,7 +5,6 @@ let mainDisplay = document.getElementById('mainDisplay');
 
 // Function to find correct folder object in folders Array when folder selected/initially created
 let correctObj
-
 function linkBtnToObj (e) {
     correctObj = folders.find((element) => element.title === e.target.textContent);
     correctObj = correctObj;
@@ -15,6 +14,7 @@ function linkFormToObj () {
     correctObj = folders.find((element) => element.title === newFolderSubmission.value);
     correctObj = correctObj;
 };
+
 
 function renderMostRecentFolder () {
     correctObj = folders[folders.length-1];
@@ -56,11 +56,37 @@ function tasksRemainingText () {
     mainDisplay.appendChild(tasksRemaining)
 }
 
+// function to display all tasks
+function displayTasks () {
+let tasks = document.createElement('div')
+correctObj.tasks.forEach(element => {
+    let taskDiv = document.createElement('div');
+    let name = document.createElement('h')
+    name.textContent = element.name;
+    taskDiv.appendChild(name)
+    let dueDate = document.createElement('div')
+    dueDate.textContent = element.dueDate
+    taskDiv.appendChild(dueDate)
+    let priority = document.createElement('div')
+    priority.textContent = element.priority;
+    taskDiv.appendChild(priority)
+    let description = document.createElement('div')
+    description.textContent = element.description
+    taskDiv.appendChild(description)
+    tasks.appendChild(taskDiv)
+});
+mainDisplay.appendChild(tasks)
+}
+
+// function to add task
+
+
 function mainDisplayElements () {
     mainDisplay.classList = [];
     title()
     tasksRemainingLogic()
     tasksRemainingText()
+    displayTasks()
 }
 
 
