@@ -68,7 +68,7 @@ function displayTasks () {
 let tasks = document.createElement('div')
 correctObj.tasks.forEach(element => {
     let taskDiv = document.createElement('div');
-    let name = document.createElement('h')
+    let name = document.createElement('h1')
     name.textContent = element.name;
     taskDiv.appendChild(name)
     let dueDate = document.createElement('div')

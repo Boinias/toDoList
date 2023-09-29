@@ -8,7 +8,8 @@
 </head>
 <body>
     <div id="taskForm">
-            <form>
+            <form id="newTaskForm">
+                <h1>New Task</h1>
                 <div id="nameInput">
                     <label for="name">Task name</label>
                     <input type="text" id="name" pattern="^[A-Za-z]" required
@@ -27,7 +28,7 @@
                      </optgroup>    
                     </select>              
                 </div>
-                <textarea name="Description" id="Description" cols="30" rows="10">Description</textarea>
+                <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Description"></textarea>
                 <input type="submit">
             </form>
         </div>
