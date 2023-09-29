@@ -14,6 +14,7 @@ addFolderForm.addEventListener("submit", (e) => {
     createFolderBtn();
     linkFormToObj();
     mainDisplayElements();
+    addFolderForm.reset();
   }
 );
 

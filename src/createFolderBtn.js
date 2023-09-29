@@ -1,6 +1,8 @@
 import {mainDisplayElements, linkBtnToObj} from './mainDisplayElements.js'
 import {folders, createFolderObject} from './createFolderObject.js'
 
+let folderBtnsDiv = document.getElementById('folderBtns');
+
 function allBtnsDeselectedColor () {
     let folderBtns = document.querySelectorAll('#folderBtn')
     folderBtns.forEach(function(folderBtn) {
@@ -21,22 +23,23 @@ function removeMainDisplayElements () {
 };
 
 function createFolderBtn () {
-folders.forEach((folder, index) => {
-    let folderTitle = folder.title;
-    let button = document.createElement('button');
-    button.textContent = folderTitle;
-    button.id = 'folderBtn';
-    button.classList.add('selectedColor');
-    allBtnsDeselectedColor();
-    button.onclick = function (e) {
+    folderBtnsDiv.innerHTML = '';
+    folders.forEach((folder) => {
+        let button = document.createElement('button');
+        let folderTitle = folder.title;
+        button.textContent = folderTitle;
+        button.id = 'folderBtn';
+        button.classList.add('selectedColor');
         allBtnsDeselectedColor();
-        btnSelectedColor(e.target);
-        removeMainDisplayElements();
-        linkBtnToObj (e)
-        mainDisplayElements()
-    };
-    folderBtns.appendChild(folderTitle)
-});
+        button.onclick = function (e) {
+            allBtnsDeselectedColor();
+            btnSelectedColor(e.target);
+            removeMainDisplayElements();
+            linkBtnToObj (e)
+            mainDisplayElements()
+        };
+        folderBtnsDiv.appendChild(button)
+    });
 };
 
 export {
