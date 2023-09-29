@@ -1,14 +1,15 @@
+import { createFolderBtn } from './createFolderBtn.js';
 import {renderMostRecentFolder, correctObj, mainDisplayElements} from './mainDisplayElements.js';
 import {loadPlaceholderIcon} from './placeholderIcon.js'
 
 function intialRender () {
 renderMostRecentFolder();
-if (correctObj == null || correctObj == undefined) {
+if (correctObj == undefined) {
     loadPlaceholderIcon();
 } else {
     mainDisplayElements();
+    createFolderBtn();
     }
-    console.log(correctObj)
 };
 
 export {intialRender};
