@@ -57,6 +57,7 @@ function tasksRemainingText () {
 }
 
 function mainDisplayElements () {
+    mainDisplay.classList = [];
     title()
     tasksRemainingLogic()
     tasksRemainingText()
@@ -65,4 +66,4 @@ function mainDisplayElements () {
 
 
 
-export {mainDisplayElements, linkBtnToObj ,linkFormToObj, renderMostRecentFolder};
+export {mainDisplayElements, correctObj, linkBtnToObj ,linkFormToObj, renderMostRecentFolder};

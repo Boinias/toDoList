@@ -11,4 +11,4 @@ function loadPlaceholderIcon () {
     mainDisplay.classList.add('mainDisplayEmpty')
 }
 
-export default loadPlaceholderIcon;
+export {loadPlaceholderIcon};

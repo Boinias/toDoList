@@ -1,7 +1,6 @@
-// Logic to load placeholder icon when the user has no folders
-import loadPlaceholderIcon from './placeholderIcon.js';
-loadPlaceholderIcon()
-
+// Logic to load placeholder icon when the user has no folders or most recent folder
+import {intialRender} from './initialRender.js';
+intialRender()
 // Logic to make new folder upon form submission
 import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
