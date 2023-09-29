@@ -1,7 +1,14 @@
-import {folders} from './createFolderObject.js'
+import {folders} from './createFolderObject.js';
+import { format, addDays } from 'date-fns';
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
+
+// function to set minimum date for dueDate form
+let taskForm = document.getElementById('taskForm');
+let today = new Date();
+const formattedMinDate = format(today, 'yyyy-MM-dd');
+dateInput.min = formattedMinDate;
 
 // Function to find correct folder object in folders Array when folder selected/initially created
 let correctObj
@@ -78,7 +85,7 @@ correctObj.tasks.forEach(element => {
 mainDisplay.appendChild(tasks)
 }
 
-// function to add task
+
 
 
 function mainDisplayElements () {

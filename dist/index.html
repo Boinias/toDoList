@@ -9,15 +9,25 @@
 <body>
     <div id="taskForm">
             <form>
-                <div id="name">
+                <div id="nameInput">
                     <label for="name">Task name</label>
                     <input type="text" id="name" pattern="^[A-Za-z]" required
                     placeholder=" ">
                 </div>
-                <div id="dueDate">
+                <div id="dueDateInput">
                     <label for="dueDate">Due date</label>
-                    <input type="date" id="dueDate" min=''required>
+                    <input type="date" id="dueDate" required>
                 </div>
+                <div id="priorityInput">
+                    <select name="priority" id="priority">
+                    <optgroup label="Priority levels">
+                        <option value="Low" selected>Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                     </optgroup>    
+                    </select>              
+                </div>
+                <textarea name="Description" id="Description" cols="30" rows="10">Description</textarea>
                 <input type="submit">
             </form>
         </div>
