@@ -7,29 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="taskForm">
             <form id="newTaskForm">
                 <h1>New Task</h1>
-                <div id="nameInput">
+                <div class="formInput" id="nameInput">
                     <label for="name">Task name</label>
                     <input type="text" id="name" pattern="^[A-Za-z]" required
                     placeholder=" ">
                 </div>
-                <div id="dueDateInput">
+                <div class="formInput" id="dueDateInput">
                     <label for="dueDate">Due date</label>
                     <input type="date" id="dueDate" required>
                 </div>
-                <div id="priorityInput">
+                <div class="formInput" id="priorityInput">
+                    <label for="priorityInput">Priority</label>
                     <select name="priority" id="priority">
                     <optgroup label="Priority levels">
                         <option value="Low" selected>Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                      </optgroup>    
-                    </select>              
+                    </select>
+                </div>      
+                <div class="formInput" >
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
                 </div>
-                <textarea name="Description" id="Description" cols="30" rows="10" placeholder="Description"></textarea>
-                <input type="submit">
+                <button id='submitBtn'type="submit">Submit</button>
             </form>
         </div>
 
