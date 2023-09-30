@@ -8,7 +8,7 @@ let mainDisplay = document.getElementById('mainDisplay');
 let taskForm = document.getElementById('taskForm');
 let today = new Date();
 const formattedMinDate = format(today, 'yyyy-MM-dd');
-dateInput.min = formattedMinDate;
+
 
 // Function to find correct folder object in folders Array when folder selected/initially created
 let correctObj
