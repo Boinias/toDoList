@@ -1,9 +1,15 @@
-let dimBg = document.getElementById('dimBg');
 let newTaskForm = document.getElementById('newTaskForm');
+let dimBg = document.getElementById('dimBg')
 
-function displayAddTaskForm () {
-    dimBg.style.display = 'flex';
-    newTaskForm.style.display = 'flex';
+function clearForm() {
+    newTaskForm.style.display = 'none';
+    newTaskForm.reset();
+    dimBg.style.display = 'none';
 }
 
-export default displayAddTaskForm
+function displayAddTaskForm() {
+    newTaskForm.style.display = 'flex';
+    dimBg.style.display = 'flex';
+}
+
+export {displayAddTaskForm, clearForm};

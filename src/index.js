@@ -6,6 +6,9 @@ import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
 import {mainDisplayElements} from './mainDisplayElements.js';
 import {linkFormToObj} from './mainDisplayElements.js';
+import {clearForm} from './addTaskFormLogic.js';
+
+
 const addFolderForm = document.getElementById("addFolderForm");
 addFolderForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -17,4 +20,10 @@ addFolderForm.addEventListener("submit", (e) => {
     addFolderForm.reset();
   }
 );
+
+let dimBg = document.getElementById("dimBg");
+dimBg.addEventListener('click', () => {
+  console.log('fds')
+  clearForm();
+})
 
