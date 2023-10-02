@@ -5,3 +5,5 @@ function displayAddTaskForm () {
     dimBg.style.display = 'flex';
     newTaskForm.style.display = 'flex';
 }
+
+export default displayAddTaskForm

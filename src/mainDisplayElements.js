@@ -1,5 +1,6 @@
 import {folders} from './createFolderObject.js';
 import { format, addDays } from 'date-fns';
+import displayAddTaskForm from './addTaskFormLogic.js';
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
@@ -63,6 +64,16 @@ function tasksRemainingText () {
     mainDisplay.appendChild(tasksRemaining)
 }
 
+function createAddTaskBtn () {
+    let addTaskBtn = document.createElement('button');
+    addTaskBtn.id = 'addTaskBtn';
+    addTaskBtn.textContent = '+';
+    addTaskBtn.addEventListener('click', () => {
+        displayAddTaskForm()
+    });
+    mainDisplay.appendChild(addTaskBtn);
+}
+
 // function to display all tasks
 function displayTasks () {
 let tasks = document.createElement('div')
@@ -94,6 +105,8 @@ function mainDisplayElements () {
     tasksRemainingLogic()
     tasksRemainingText()
     displayTasks()
+    // tasks
+    createAddTaskBtn ()
 }
 
 
