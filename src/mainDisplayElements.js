@@ -1,6 +1,6 @@
 import {folders} from './createFolderObject.js';
 import { format, addDays } from 'date-fns';
-import displayAddTaskForm from './addTaskFormLogic.js';
+import {displayAddTaskForm} from './addTaskFormLogic.js'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');

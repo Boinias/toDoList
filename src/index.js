@@ -23,7 +23,6 @@ addFolderForm.addEventListener("submit", (e) => {
 
 let dimBg = document.getElementById("dimBg");
 dimBg.addEventListener('click', () => {
-  console.log('fds')
   clearForm();
 })
 
