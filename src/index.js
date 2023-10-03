@@ -25,4 +25,3 @@ let dimBg = document.getElementById("dimBg");
 dimBg.addEventListener('click', () => {
   clearForm();
 })
-

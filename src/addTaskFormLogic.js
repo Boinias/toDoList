@@ -3,8 +3,12 @@ let dimBg = document.getElementById('dimBg')
 
 function clearForm() {
     newTaskForm.style.display = 'none';
-    newTaskForm.reset();
     dimBg.style.display = 'none';
+    function resetForm () {
+    if (newTaskForm.style.display == 'none')
+        newTaskForm.reset();
+    }
+    const timeOut = setTimeout(resetForm, 5000);
 }
 
 function displayAddTaskForm() {
