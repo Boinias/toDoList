@@ -26,18 +26,20 @@ class newTask {
     }
   }
   
-  // Retrieve 'folders' array from Local Storage or create an empty array
-  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-  
-  function createTaskObj() {
+  function createTaskObj(openFolder) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     let name = document.getElementById("name").value;
     let dueDate = document.getElementById("dueDate").value;
     let priority = document.getElementById("priorityInput").value;
+    let currentFolderTitle = openFolder.title.toString();
+    let currentFolder = folders.find(folder => folder.title === currentFolderTitle);
     let task = new newTask(name, dueDate, priority);
-    x.tasks.push(task);
-  
-    // Update Local Storage with the updated 'folders' array
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    if(!currentFolder.hasOwnProperty('tasks')) {
+      currentFolder.tasks = [];
+    }
+    currentFolder.tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(folders));
   }
   
 

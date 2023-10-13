@@ -43,7 +43,9 @@ function tasksRemainingLogic () {
     let tasks = correctObj.tasks;
     console.log(tasks);
 
-    if (tasks.length === 0) {
+    if (tasks == undefined || tasks == false || tasks == null)  {
+        incompleteTaskCounter = 0;
+    } else if (tasks.length === 0)  {
         incompleteTaskCounter = 0;
     } else {
         incompleteTaskCounter = tasks.reduce(function (acc, currentValue) {
@@ -81,6 +83,9 @@ function createAddTaskBtn () {
 // function to display all tasks
 function displayTasks () {
 let tasks = document.createElement('div')
+if (correctObj.tasks == undefined || correctObj.tasks == false || correctObj.tasks == null) {
+    console.log('no tasks')
+} else {
 correctObj.tasks.forEach(element => {
     let taskDiv = document.createElement('div');
     let name = document.createElement('h1')
@@ -99,6 +104,7 @@ correctObj.tasks.forEach(element => {
 });
 mainDisplay.appendChild(tasks)
 }
+};
 
 
 
@@ -109,11 +115,10 @@ function mainDisplayElements () {
     tasksRemainingLogic()
     tasksRemainingText()
     displayTasks()
-    // tasks
     createAddTaskBtn (correctObj)
 }
 
 
 
 
-export {mainDisplayElements, correctObj, linkBtnToObj ,linkFormToObj, renderMostRecentFolder};
+export {mainDisplayElements, correctObj, linkBtnToObj ,linkFormToObj, renderMostRecentFolder, displayTasks};
