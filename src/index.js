@@ -14,6 +14,13 @@ import {createTaskObj} from './addTaskFormLogic.js'
 // currentfolder = folders.currentFolder
 // reutrn cureentfolder
 // }
+let currentFolder
+function currentFolderFunc () {
+  currentFolder = document.getElementById('mainDisplayTitle');
+  currentFolder = mainDisplayTitle.textContent;
+  currentFolder = folders.find(folder => folder.title == currentFolder);
+  return currentFolder;
+}
 
 const addFolderForm = document.getElementById("addFolderForm");
 addFolderForm.addEventListener("submit", (e) => {
