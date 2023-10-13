@@ -25,3 +25,10 @@ let dimBg = document.getElementById("dimBg");
 dimBg.addEventListener('click', () => {
   clearForm();
 })
+
+
+const addTaskForm = document.getElementById("newTaskForm");
+newTaskForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  createTaskObj (e.target)
+});

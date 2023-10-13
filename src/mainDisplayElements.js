@@ -64,6 +64,7 @@ function tasksRemainingText () {
     mainDisplay.appendChild(tasksRemaining)
 }
 
+
 function createAddTaskBtn () {
     let addTaskBtn = document.createElement('button');
     addTaskBtn.id = 'addTaskBtn';
@@ -73,6 +74,7 @@ function createAddTaskBtn () {
     });
     mainDisplay.appendChild(addTaskBtn);
 }
+
 
 // function to display all tasks
 function displayTasks () {
