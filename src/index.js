@@ -7,7 +7,13 @@ import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
 import {mainDisplayElements} from './mainDisplayElements.js';
 import {linkFormToObj} from './mainDisplayElements.js';
 import {clearForm} from './addTaskFormLogic.js';
+import {createTaskObj} from './addTaskFormLogic.js'
 
+// function currentfolder () {
+// let currentFolder = 'mainDisplayTitle'.valueOf.to String
+// currentfolder = folders.currentFolder
+// reutrn cureentfolder
+// }
 
 const addFolderForm = document.getElementById("addFolderForm");
 addFolderForm.addEventListener("submit", (e) => {
@@ -27,9 +33,9 @@ dimBg.addEventListener('click', () => {
 })
 
 
-const addTaskForm = document.getElementById("newTaskForm");
-addTaskForm.addEventListener('submit', (e) => {
+const newTaskForm = document.getElementById("newTaskForm");
+newTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  let folderName = addTaskForm.getAttribute('data-id').toString();
-  createTaskObj(folderName)
+  createTaskObj()
+  clearForm();
 });
