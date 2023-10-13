@@ -28,7 +28,8 @@ dimBg.addEventListener('click', () => {
 
 
 const addTaskForm = document.getElementById("newTaskForm");
-newTaskForm.addEventListener('submit', (e) => {
+addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  createTaskObj (e.target)
+  let folderName = addTaskForm.getAttribute('data-id').toString();
+  createTaskObj(folderName)
 });

@@ -68,9 +68,11 @@ function tasksRemainingText () {
 function createAddTaskBtn () {
     let addTaskBtn = document.createElement('button');
     addTaskBtn.id = 'addTaskBtn';
+    let correctFolder = correctObj
+    correctFolder = correctFolder.toString();
     addTaskBtn.textContent = '+';
     addTaskBtn.addEventListener('click', () => {
-        displayAddTaskForm()
+        displayAddTaskForm(correctFolder)
     });
     mainDisplay.appendChild(addTaskBtn);
 }
@@ -108,7 +110,7 @@ function mainDisplayElements () {
     tasksRemainingText()
     displayTasks()
     // tasks
-    createAddTaskBtn ()
+    createAddTaskBtn (correctObj)
 }
 
 

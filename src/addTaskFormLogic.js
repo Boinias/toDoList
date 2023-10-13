@@ -1,3 +1,5 @@
+import {folders} from './createFolderObject.js'
+
 let newTaskForm = document.getElementById('newTaskForm');
 let dimBg = document.getElementById('dimBg')
 
@@ -11,7 +13,8 @@ function clearForm () {
     const timeOut = setTimeout(resetForm, 5000);
 }
 
-function displayAddTaskForm () {
+function displayAddTaskForm (correctFolder) {
+    newTaskForm.dataset.id = correctFolder
     newTaskForm.style.display = 'flex';
     dimBg.style.display = 'flex';
 }
@@ -27,12 +30,13 @@ class newTask {
   // Retrieve 'folders' array from Local Storage or create an empty array
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   
-  function createTaskObj(form) {
+  function createTaskObj(folderName) {
     let name = document.getElementById("name").value;
     let dueDate = document.getElementById("dueDate").value;
     let priority = document.getElementById("priority").value;
     let task = new newTask(name, dueDate, priority);
-    form.tasks.push(task);
+    let correctFolder = folders.find(folder => folder.title == folderName);
+    correctFolder.tasks.push(task);
   
     // Update Local Storage with the updated 'folders' array
     localStorage.setItem('tasks', JSON.stringify(tasks));
