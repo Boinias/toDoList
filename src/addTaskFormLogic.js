@@ -32,9 +32,9 @@ class newTask {
     let currentFolder = folders.find(folder => folder.title === currentFolderTitle);
     let name = document.getElementById("name").value;
     let dueDate = document.getElementById("dueDate").value;
-    let priority = document.getElementById("priorityInput").value;
+    let priority = document.getElementById("priorityInputSelect").value;
     let description = document.getElementById("description").value
-    console.log(priority)
+    console.log(priority);
     let task = new newTask(name, dueDate, priority, description);
   
     // Push the task to the 'tasks' array of the current folder
@@ -42,7 +42,7 @@ class newTask {
   
     // Update Local Storage with the entire 'folders' object
     localStorage.setItem('folders', JSON.stringify(folders));
-  }
+  };
   
 
 export {displayAddTaskForm, clearForm, createTaskObj};
