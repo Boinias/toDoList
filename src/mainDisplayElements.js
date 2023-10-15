@@ -82,6 +82,7 @@ function createAddTaskBtn () {
 
 // function to display all tasks
 function displayTasks () {
+    console.log(correctObj)
 let tasks = document.createElement('div')
 if (correctObj.tasks == undefined || correctObj.tasks == false || correctObj.tasks == null) {
     console.log('no tasks')

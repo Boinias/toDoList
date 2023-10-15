@@ -24,7 +24,7 @@ class newTask {
       this.dueDate = dueDate;
       this.priority = priority;
     }
-  }
+  };
   
   function createTaskObj(openFolder) {
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -39,7 +39,7 @@ class newTask {
       currentFolder.tasks = [];
     }
     currentFolder.tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(folders));
+    localStorage.setItem('tasks', JSON.stringify(currentFolder));
   }
   
 
