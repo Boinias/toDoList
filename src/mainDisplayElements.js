@@ -89,6 +89,7 @@ if (correctObj.tasks == undefined || correctObj.tasks == false || correctObj.tas
 } else {
 correctObj.tasks.forEach(element => {
     let taskDiv = document.createElement('div');
+    taskDiv.setAttribute('data-id', element.name)
     let name = document.createElement('h1')
     name.textContent = element.name;
     taskDiv.appendChild(name)
@@ -102,6 +103,13 @@ correctObj.tasks.forEach(element => {
     description.textContent = element.description
     console.log(element.description)
     taskDiv.appendChild(description)
+    let editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.setAttribute('data-id', element.name)
+    editBtn.addEventListener('click', (e, correctObj) => {
+        // bring up form
+    })
+    taskDiv.appendChild(editBtn);
     tasks.appendChild(taskDiv)
 });
 mainDisplay.appendChild(tasks)
