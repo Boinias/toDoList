@@ -111,6 +111,9 @@ mainDisplay.appendChild(tasks)
 
 function mainDisplayElements () {
     mainDisplay.classList = [];
+    while (mainDisplay.firstChild) {
+        mainDisplay.removeChild(mainDisplay.firstChild);
+      }
     title()
     tasksRemainingLogic()
     tasksRemainingText()

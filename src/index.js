@@ -46,5 +46,5 @@ newTaskForm.addEventListener('submit', (e) => {
   currentFolderFunc()
   createTaskObj(currentFolder)
   clearForm();
-  displayTasks ()
+  mainDisplayElements ()
 })
