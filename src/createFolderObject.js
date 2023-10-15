@@ -1,7 +1,7 @@
 class newFolder {
     constructor(title) {
       this.title = title;
-      // this.tasks = [];
+      this.tasks = [];
     }
   }
   
