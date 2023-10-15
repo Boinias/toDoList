@@ -19,20 +19,23 @@ function displayAddTaskForm () {
 }
 
 class newTask {
-    constructor(name, dueDate, priority) {
+    constructor(name, dueDate, priority, description) {
       this.name = name;
       this.dueDate = dueDate;
       this.priority = priority;
+      this.description = description;
     }
   };
-  
+
   function createTaskObj(openFolder) {
     let currentFolderTitle = openFolder.title.toString();
     let currentFolder = folders.find(folder => folder.title === currentFolderTitle);
     let name = document.getElementById("name").value;
     let dueDate = document.getElementById("dueDate").value;
     let priority = document.getElementById("priorityInput").value;
-    let task = new newTask(name, dueDate, priority);
+    let description = document.getElementById("description").value
+    console.log(priority)
+    let task = new newTask(name, dueDate, priority, description);
   
     // Push the task to the 'tasks' array of the current folder
     currentFolder.tasks.push(task);

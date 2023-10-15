@@ -100,6 +100,7 @@ correctObj.tasks.forEach(element => {
     taskDiv.appendChild(priority)
     let description = document.createElement('div')
     description.textContent = element.description
+    console.log(element.description)
     taskDiv.appendChild(description)
     tasks.appendChild(taskDiv)
 });
