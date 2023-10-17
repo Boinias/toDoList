@@ -1,4 +1,4 @@
-import {displayAddTaskForm} from './createFolderBtn'
+import {displayTaskForm} from './taskFormLogic'
 
 
 
@@ -14,5 +14,5 @@ function editForm (e, correctObj) {
     document.getElementById("description").value = currentTask.description;
 
 
-    displayAddTaskForm();
+    displayTaskForm();
 }

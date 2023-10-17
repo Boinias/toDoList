@@ -1,6 +1,6 @@
 import {folders} from './createFolderObject.js';
 import { format, addDays } from 'date-fns';
-import {displayAddTaskForm} from './addTaskFormLogic.js'
+import {displayTaskForm} from './taskFormLogic.js'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
@@ -74,7 +74,7 @@ function createAddTaskBtn () {
     correctFolder = correctFolder.toString();
     addTaskBtn.textContent = '+';
     addTaskBtn.addEventListener('click', () => {
-        displayAddTaskForm(correctFolder)
+        displayTaskForm(correctFolder)
     });
     mainDisplay.appendChild(addTaskBtn);
 }

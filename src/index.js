@@ -6,8 +6,8 @@ import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
 import {mainDisplayElements} from './mainDisplayElements.js';
 import {linkFormToObj, displayTasks} from './mainDisplayElements.js';
-import {clearForm} from './addTaskFormLogic.js';
-import {createTaskObj} from './addTaskFormLogic.js'
+import {clearForm} from './taskFormLogic.js';
+import {createTaskObj} from './taskFormLogic.js'
 
 // function currentfolder () {
 // let currentFolder = 'mainDisplayTitle'.valueOf.to String
@@ -48,3 +48,8 @@ newTaskForm.addEventListener('submit', (e) => {
   clearForm();
   mainDisplayElements ()
 })
+
+// task frm submit () > {
+//   if the variable formState = add { do above} else if
+//   formState = edit {make form edit on submission}
+// }

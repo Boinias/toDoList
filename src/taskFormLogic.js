@@ -1,20 +1,20 @@
 import {folders} from './createFolderObject.js'
 
-let newTaskForm = document.getElementById('newTaskForm');
+let taskForm = document.getElementById('newTaskForm');
 let dimBg = document.getElementById('dimBg')
 
 function clearForm () {
-    newTaskForm.style.display = 'none';
+    taskForm.style.display = 'none';
     dimBg.style.display = 'none';
     function resetForm () {
-    if (newTaskForm.style.display == 'none')
-        newTaskForm.reset();
+    if (taskForm.style.display == 'none')
+        taskForm.reset();
     }
     const timeOut = setTimeout(resetForm, 5000);
 }
 
-function displayAddTaskForm () {
-    newTaskForm.style.display = 'flex';
+function displayTaskForm () {
+    taskForm.style.display = 'flex';
     dimBg.style.display = 'flex';
 }
 
@@ -45,4 +45,4 @@ class newTask {
   };
   
 
-export {displayAddTaskForm, clearForm, createTaskObj};
+export {displayTaskForm, clearForm, createTaskObj};
