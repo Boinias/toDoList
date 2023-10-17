@@ -1,6 +1,6 @@
 import {folders} from './createFolderObject.js';
 import { format, addDays } from 'date-fns';
-import {displayTaskForm} from './taskFormLogic.js'
+import {displayNewTaskForm, displayEditTaskForm} from './taskFormLogic.js'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
@@ -73,12 +73,19 @@ function createAddTaskBtn () {
     let correctFolder = correctObj
     correctFolder = correctFolder.toString();
     addTaskBtn.textContent = '+';
-    addTaskBtn.addEventListener('click', () => {
-        displayTaskForm(correctFolder)
+    addTaskBtn.addEventListener('click', () => {  
+        formStatusChange ('add task')   
+        displayNewTaskForm();
     });
     mainDisplay.appendChild(addTaskBtn);
 }
 
+
+let formStatus = ''
+
+function formStatusChange (input) {
+  formStatus = input
+}
 
 // function to display all tasks
 function displayTasks () {
@@ -106,7 +113,9 @@ correctObj.tasks.forEach(element => {
     let editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.setAttribute('data-id', element.name)
-    editBtn.addEventListener('click', (e, correctObj) => {
+    editBtn.addEventListener('click', (e) => {
+        formStatusChange ('edit task');
+        displayEditTaskForm(e);
         // bring up form
     })
     taskDiv.appendChild(editBtn);
@@ -134,4 +143,4 @@ function mainDisplayElements () {
 
 
 
-export {mainDisplayElements, correctObj, linkBtnToObj ,linkFormToObj, renderMostRecentFolder, displayTasks};
+export {mainDisplayElements, correctObj, linkBtnToObj ,linkFormToObj, renderMostRecentFolder, displayTasks, formStatus};

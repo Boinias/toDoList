@@ -1,7 +1,12 @@
 import {folders} from './createFolderObject.js'
+import {currentFolderFunc} from './index.js'
+import {mainDisplayElements} from './mainDisplayElements.js'
 
-let taskForm = document.getElementById('newTaskForm');
+let taskForm = document.getElementById('taskForm');
+let taskFormTitle = document.getElementById('formTitle');
+let submitBtn = document.getElementById('submitBtn')
 let dimBg = document.getElementById('dimBg')
+
 
 function clearForm () {
     taskForm.style.display = 'none';
@@ -11,11 +16,6 @@ function clearForm () {
         taskForm.reset();
     }
     const timeOut = setTimeout(resetForm, 5000);
-}
-
-function displayTaskForm () {
-    taskForm.style.display = 'flex';
-    dimBg.style.display = 'flex';
 }
 
 class newTask {
@@ -44,5 +44,37 @@ class newTask {
     localStorage.setItem('folders', JSON.stringify(folders));
   };
   
+  function addTask () {
+    currentFolderFunc()
+    createTaskObj(currentFolderFunc())
+    clearForm();
+    mainDisplayElements ()
+  }
 
-export {displayTaskForm, clearForm, createTaskObj};
+
+  function displayNewTaskForm () {
+    taskForm.style.display = 'flex';
+    dimBg.style.display = 'flex';
+    taskFormTitle.textContent = 'New Task';
+    submitBtn.textContent = 'Add';
+    
+}
+
+  function displayEditTaskForm (e) {
+    taskForm.style.display = 'flex';
+    dimBg.style.display = 'flex';
+    taskFormTitle.textContent = 'Edit Task'
+    submitBtn.textContent = 'Update'
+    let button = e.target;
+    let taskId = button.getAttribute('data-id');
+    let currentFolder = currentFolderFunc()
+    console.log(currentFolder)
+    let tasksArray = currentFolder.tasks
+    let currentTask = tasksArray.find(task => task.name === taskId);
+    document.getElementById("name").value = currentTask.name;
+    document.getElementById("dueDate").value = currentTask.dueDate;
+    document.getElementById("priorityInputSelect").value = currentTask.priority;
+    document.getElementById("description").value = currentTask.description;
+  };
+
+export {clearForm, createTaskObj, addTask, displayEditTaskForm, displayNewTaskForm};

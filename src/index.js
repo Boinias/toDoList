@@ -4,16 +4,11 @@ intialRender()
 // Logic to make new folder upon form submission
 import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
-import {mainDisplayElements} from './mainDisplayElements.js';
+import {mainDisplayElements, formStatus} from './mainDisplayElements.js';
 import {linkFormToObj, displayTasks} from './mainDisplayElements.js';
 import {clearForm} from './taskFormLogic.js';
-import {createTaskObj} from './taskFormLogic.js'
+import {createTaskObj, addTask, displayNewTaskForm, displayEditTask} from './taskFormLogic.js'
 
-// function currentfolder () {
-// let currentFolder = 'mainDisplayTitle'.valueOf.to String
-// currentfolder = folders.currentFolder
-// reutrn cureentfolder
-// }
 let currentFolder
 function currentFolderFunc () {
   currentFolder = document.getElementById('mainDisplayTitle');
@@ -39,17 +34,15 @@ dimBg.addEventListener('click', () => {
   clearForm();
 })
 
-
-const newTaskForm = document.getElementById("newTaskForm");
-newTaskForm.addEventListener('submit', (e) => {
+const taskForm = document.getElementById("taskForm");
+taskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  currentFolderFunc()
-  createTaskObj(currentFolder)
-  clearForm();
-  mainDisplayElements ()
+  addTask();
 })
 
 // task frm submit () > {
 //   if the variable formState = add { do above} else if
 //   formState = edit {make form edit on submission}
 // }
+
+export {currentFolderFunc};
