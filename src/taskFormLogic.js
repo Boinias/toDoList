@@ -44,13 +44,8 @@ class newTask {
     localStorage.setItem('folders', JSON.stringify(folders));
   };
   
-  function addTask () {
-    currentFolderFunc()
-    createTaskObj(currentFolderFunc())
-    clearForm();
-    mainDisplayElements ()
-  }
 
+  let currentTask = '';
 
   function displayNewTaskForm () {
     taskForm.style.display = 'flex';
@@ -70,11 +65,27 @@ class newTask {
     let currentFolder = currentFolderFunc()
     console.log(currentFolder)
     let tasksArray = currentFolder.tasks
-    let currentTask = tasksArray.find(task => task.name === taskId);
+    currentTask = tasksArray.find(task => task.name === taskId);
+    console.log(currentTask)
     document.getElementById("name").value = currentTask.name;
     document.getElementById("dueDate").value = currentTask.dueDate;
     document.getElementById("priorityInputSelect").value = currentTask.priority;
     document.getElementById("description").value = currentTask.description;
   };
 
-export {clearForm, createTaskObj, addTask, displayEditTaskForm, displayNewTaskForm};
+  function addTask () {
+    currentFolderFunc()
+    createTaskObj(currentFolderFunc())
+    clearForm();
+    mainDisplayElements ()
+  }
+
+  function editTask () {
+    currentTask.name = document.getElementById("name").value
+    currentTask.dueDate = document.getElementById("dueDate").value;
+    currentTask.priority = document.getElementById("priorityInputSelect").value
+    currentTask.description = document.getElementById("description").value
+    clearForm();
+    mainDisplayElements ()
+  }
+export {clearForm, createTaskObj, displayEditTaskForm, displayNewTaskForm, addTask, editTask  };

@@ -4,10 +4,9 @@ intialRender()
 // Logic to make new folder upon form submission
 import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
-import {mainDisplayElements, formStatus} from './mainDisplayElements.js';
-import {linkFormToObj, displayTasks} from './mainDisplayElements.js';
+import {linkFormToObj, displayTasks, mainDisplayElements, formStatus} from './mainDisplayElements.js';
 import {clearForm} from './taskFormLogic.js';
-import {createTaskObj, addTask, displayNewTaskForm, displayEditTask} from './taskFormLogic.js'
+import {createTaskObj, displayNewTaskForm, displayEditTask, addTask, editTask} from './taskFormLogic.js'
 
 let currentFolder
 function currentFolderFunc () {
@@ -37,7 +36,12 @@ dimBg.addEventListener('click', () => {
 const taskForm = document.getElementById("taskForm");
 taskForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  console.log(formStatus)
+  if (formStatus == 'add task') {
   addTask();
+  } else if (formStatus == 'edit task') {
+    editTask ()
+  }
 })
 
 // task frm submit () > {
