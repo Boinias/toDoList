@@ -85,6 +85,7 @@ class newTask {
     currentTask.dueDate = document.getElementById("dueDate").value;
     currentTask.priority = document.getElementById("priorityInputSelect").value
     currentTask.description = document.getElementById("description").value
+    localStorage.setItem('folders', JSON.stringify(folders));
     clearForm();
     mainDisplayElements ()
   }
