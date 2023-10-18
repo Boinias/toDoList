@@ -1,6 +1,6 @@
 import {folders} from './createFolderObject.js';
 import { format, addDays } from 'date-fns';
-import {displayNewTaskForm, displayEditTaskForm} from './taskFormLogic.js'
+import {displayNewTaskForm, displayEditTaskForm, taskComplete} from './taskLogic.js'
 
 let newFolderSubmission = document.getElementById('addFolder');
 let mainDisplay = document.getElementById('mainDisplay');
@@ -87,6 +87,14 @@ function formStatusChange (input) {
   formStatus = input
 }
 
+function displayTaskComplete (task, taskComplete) {
+    if (task.taskComplete == 'incomplete') {
+        taskComplete.textContent = '';
+    } else if (task.taskComplete == 'complete'){
+        taskComplete.textContent = '✔';
+    }
+}
+
 // function to display all tasks
 function displayTasks () {
     console.log(correctObj)
@@ -94,34 +102,58 @@ let tasks = document.createElement('div')
 if (correctObj.tasks == undefined || correctObj.tasks == false || correctObj.tasks == null) {
     console.log('no tasks')
 } else {
-correctObj.tasks.forEach(element => {
+correctObj.tasks.forEach(task => {
     let taskDiv = document.createElement('div');
-    taskDiv.setAttribute('data-id', element.name)
+    taskDiv.setAttribute('data-id', task.name)
+
     let name = document.createElement('h1')
-    name.textContent = element.name;
+    name.textContent = task.name;
     taskDiv.appendChild(name)
+
     let dueDate = document.createElement('div')
-    dueDate.textContent = element.dueDate
+    dueDate.textContent = task.dueDate
     taskDiv.appendChild(dueDate)
-    let priority = document.createElement('div')
-    priority.textContent = element.priority;
-    taskDiv.appendChild(priority)
+
+    let taskCompleteBtn = document.createElement('button')
+    taskCompleteBtn.classList.add('taskComplete')
+    switch (task.priority) {
+        case 'Low':
+        taskCompleteBtn.style.borderColor = 'Green';
+        break;
+        case 'Medium':
+        taskCompleteBtn.style.borderColor = 'Yellow';
+        break;
+        case 'High':
+        taskCompleteBtn.style.borderColor = 'Red';
+        default:
+        taskCompleteBtn.style.borderColor = 'Green';
+    }
+    taskCompleteBtn.addEventListener('click', (e)=> {
+        taskComplete(e, task);
+        displayTaskComplete(task, taskComplete);
+    });
+    taskDiv.appendChild(taskCompleteBtn)
+
     let description = document.createElement('div')
-    description.textContent = element.description
-    console.log(element.description)
+    description.textContent = task.description
+    console.log(task.description)
     taskDiv.appendChild(description)
+
     let editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
-    editBtn.setAttribute('data-id', element.name)
+    editBtn.setAttribute('data-id', task.name)
     editBtn.addEventListener('click', (e) => {
         formStatusChange ('edit task');
         displayEditTaskForm(e);
         // bring up form
     })
     taskDiv.appendChild(editBtn);
+
     tasks.appendChild(taskDiv)
 });
+
 mainDisplay.appendChild(tasks)
+
 }
 };
 

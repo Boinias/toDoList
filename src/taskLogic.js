@@ -2,6 +2,7 @@ import {folders} from './createFolderObject.js'
 import {currentFolderFunc} from './index.js'
 import {mainDisplayElements} from './mainDisplayElements.js'
 
+
 let taskForm = document.getElementById('taskForm');
 let taskFormTitle = document.getElementById('formTitle');
 let submitBtn = document.getElementById('submitBtn')
@@ -24,6 +25,7 @@ class newTask {
       this.dueDate = dueDate;
       this.priority = priority;
       this.description = description;
+      this.taskComplete = 'incomplete';
     }
   };
 
@@ -52,7 +54,6 @@ class newTask {
     dimBg.style.display = 'flex';
     taskFormTitle.textContent = 'New Task';
     submitBtn.textContent = 'Add';
-    
 }
 
   function displayEditTaskForm (e) {
@@ -89,4 +90,20 @@ class newTask {
     clearForm();
     mainDisplayElements ()
   }
-export {clearForm, createTaskObj, displayEditTaskForm, displayNewTaskForm, addTask, editTask  };
+
+  function taskComplete (e, task) {
+    if (task.taskComplete = 'incomplete') {
+      task.taskComplete = 'complete';
+    } else {
+      task.taskComplete = 'incomplete';
+    }
+    localStorage.setItem('folders', JSON.stringify(folders));
+  };
+
+
+
+
+
+
+
+export {clearForm, createTaskObj, displayEditTaskForm, displayNewTaskForm, addTask, editTask, taskComplete};

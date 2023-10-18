@@ -5,8 +5,8 @@ intialRender()
 import { folders, createFolderObject } from './createFolderObject.js';
 import {createFolderBtn, removeMainDisplayElements} from './createFolderBtn.js';
 import {linkFormToObj, displayTasks, mainDisplayElements, formStatus} from './mainDisplayElements.js';
-import {clearForm} from './taskFormLogic.js';
-import {createTaskObj, displayNewTaskForm, displayEditTask, addTask, editTask} from './taskFormLogic.js'
+import {clearForm} from './taskLogic.js';
+import {createTaskObj, displayNewTaskForm, displayEditTask, addTask, editTask} from './taskLogic.js'
 
 let currentFolder
 function currentFolderFunc () {
