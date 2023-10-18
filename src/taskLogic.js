@@ -92,9 +92,9 @@ class newTask {
   }
 
   function taskComplete (e, task) {
-    if (task.taskComplete = 'incomplete') {
+    if (task.taskComplete === 'incomplete') {
       task.taskComplete = 'complete';
-    } else {
+    } else if (task.taskComplete === 'complete') {
       task.taskComplete = 'incomplete';
     }
     localStorage.setItem('folders', JSON.stringify(folders));

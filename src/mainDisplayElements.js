@@ -88,9 +88,9 @@ function formStatusChange (input) {
 }
 
 function displayTaskComplete (task, taskComplete) {
-    if (task.taskComplete == 'incomplete') {
+    if (task.taskComplete === 'incomplete') {
         taskComplete.textContent = '';
-    } else if (task.taskComplete == 'complete'){
+    } else if (task.taskComplete === 'complete'){
         taskComplete.textContent = '✔';
     }
 }
@@ -130,8 +130,9 @@ correctObj.tasks.forEach(task => {
     }
     taskCompleteBtn.addEventListener('click', (e)=> {
         taskComplete(e, task);
-        displayTaskComplete(task, taskComplete);
+        displayTaskComplete(task, taskCompleteBtn);
     });
+    displayTaskComplete(task, taskCompleteBtn);
     taskDiv.appendChild(taskCompleteBtn)
 
     let description = document.createElement('div')
